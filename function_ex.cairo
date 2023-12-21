@@ -1,15 +1,13 @@
+use debug::PrintTrait;
+
 fn main() {
-    let immutable_var: felt252 = 17;
-    // immutable_var = 38;  <-- fails to compile
+    let x = 3;
 
-    // but this is legal:
-    let mut mutable_var: felt252 = immutable_var;
-    mutable_var = 38;
+    inc(x).print();
 
-    assert(mutable_var != immutable_var, 'mutable equals immutable');
 }
 
-#[test]
-fn test_main() {
-    main();
+// This function returns an u32.
+fn inc(x: u32) -> u32 {
+    x + 1
 }
